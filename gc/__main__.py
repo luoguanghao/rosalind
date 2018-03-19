@@ -26,10 +26,10 @@ def problem(dataset=None):
 
     def gc_count(dna):
         c = Counter(dna)
-        return (c.get('G', 0) + c.get('C', 0)) / float(sum(c.values())) * 100
+        return (c.get('G', 0) + c.get('C', 0)) / float(sum(c.values())) * 100 
 
     ids_gccounts = [(k, gc_count(v)) for k, v in records.iteritems()]
-    return sorted(ids_gccounts, key=lambda x: x[1])[-1]
+    return sorted(ids_gccounts, key=lambda x: x[1])[-1] #return the max
 
 if __name__ == '__main__':
     record_id, gc_count = problem()
